@@ -21,14 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_people_list) as NavHostFragment
         val navController = navHostFragment.navController
-//        navController.navigate(R.id.action_personListFragment_to_personDetailsFragment)
 
-
-        //navHostFragment.findNavController().navigate(R.id.personDetailsFragment)
-        //When the app initially loads always show the PersonListFragment 1st
-//        replaceFragment(PersonListFragment())
-
-//        navController.navigate(R.id.per)
 
         //This will handle the Bottom navigation. Switches between People and Rooms Fragment
         binding.bottomNavigationView.setOnItemSelectedListener {
