@@ -7,9 +7,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.virginmoneyhilt.data.api.RetrofitInstance
 import com.example.virginmoneyhilt.data.model.people.PeopleItemModel
+import com.example.virginmoneyhilt.data.repository.Repository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-
-class PersonListViewModel:ViewModel() {
+import javax.inject.Inject
+@HiltViewModel
+class PersonListViewModel @Inject constructor(val repository:Repository) :ViewModel() {
 
     private val _personList = MutableLiveData<ArrayList<PeopleItemModel>>()
     val personList: LiveData<ArrayList<PeopleItemModel>> = _personList
@@ -25,7 +28,7 @@ class PersonListViewModel:ViewModel() {
         //the people list holds PeopleItemModel objects
         viewModelScope.launch {
 
-            val result = RetrofitInstance.apiClient.getPeople() //this actually makes the api call to the endpoint
+            val result = repository.getPeople() //this actually makes the api call to the endpoint
 
             if(result!=null){
                 _personList.postValue(result)

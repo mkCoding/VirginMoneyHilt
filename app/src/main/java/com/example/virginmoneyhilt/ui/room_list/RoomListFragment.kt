@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.virginmoneyhilt.databinding.FragmentRoomListBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 
 /**
@@ -16,6 +17,7 @@ import com.example.virginmoneyhilt.databinding.FragmentRoomListBinding
  * Use the [RoomListFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
+@AndroidEntryPoint
 class RoomListFragment : Fragment() {
 
     private lateinit var binding: FragmentRoomListBinding

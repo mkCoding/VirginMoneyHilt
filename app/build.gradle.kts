@@ -1,6 +1,11 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+
+    id ("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
+
+
 }
 
 android {
@@ -53,6 +58,8 @@ dependencies {
 
 
 
+
+
     //These are all the required libraries needed in order to create API calls
 
     // Retrofit -> Network
@@ -69,5 +76,9 @@ dependencies {
     implementation("com.google.code.gson:gson:2.10.1")
     implementation("com.squareup.retrofit2:converter-gson:2.10.0")
 
+
+    //Hilt
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
 
 }

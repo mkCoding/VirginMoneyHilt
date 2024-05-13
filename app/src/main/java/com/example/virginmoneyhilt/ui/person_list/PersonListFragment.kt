@@ -12,12 +12,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.virginmoneyhilt.R
 
 import com.example.virginmoneyhilt.databinding.FragmentPersonListBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 /**
  * A simple [Fragment] subclass.
  * Use the [PersonListFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
+@AndroidEntryPoint
 class PersonListFragment : Fragment() {
 
     private lateinit var binding: FragmentPersonListBinding
